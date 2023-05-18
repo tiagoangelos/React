@@ -1,9 +1,7 @@
 import './index.css';
 import './App.css';
-import SayMyName from './components/SayMyName'
-import Pessoa from './components/Pessoa'
-import Frase from './components/Frase'
-import List from './components/List'
+import Evento from './components/Evento';
+import Form from './components/Form';
 
 function App() {
   const Url_foto = "https://img.icons8.com/?size=212&id=8M92DMPclyd9&format=png"
@@ -11,11 +9,10 @@ function App() {
 
   return (
     <div className="App">
-        <h3>REACT</h3>
-        <List />
-        <Frase />
-        <SayMyName nome="joão"/>
-        <Pessoa foto={Url_foto} nome="TIAGO" idade={idade} profissao="Estudante" />
+        <h1>REACT</h1>
+        <Evento />
+        <Form />
+
     </div>
   );
 }
