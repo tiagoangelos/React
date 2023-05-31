@@ -1,15 +1,13 @@
 import { useState } from 'react';
 
 function Form(){
-
     function CadastrarUsuario(event){
-        event.preventDefault()
-        console.log(`O Usuario: ${name}, Foi Cadastrado com a Senha: ${password}.`)
-        
+        event.preventDefault() //evitar scrool da pagina
+        alert(`o usuario: ${name}, foi cadastrado com a senha: ${password}.`);
     }
 
     const [name, setName] = useState()
-    const [password, setPassword] = useState()
+    const [password, setPassword] = useState()    
 
     return (
         <div>
@@ -22,7 +20,9 @@ function Form(){
                         id="name" 
                         name="name" 
                         placeholder="Digite o seu Nome"
-                        onChange={(e) => setName(e.target.value)}
+                        autoComplete='off'
+                        required
+                        onChange={(event) => setName(event.target.value)}
                     /> 
                 </div>
                 <div>
@@ -31,8 +31,10 @@ function Form(){
                         type='password' 
                         id="password" 
                         name="password" 
-                        placeholder="Digite sua senha" 
-                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Digite sua senha"
+                        required
+                        autoComplete='off' 
+                        onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
 
@@ -41,7 +43,7 @@ function Form(){
                 </div>
             </form>    
         </div>
-    )
-}
-
+    
+)}
+    
 export default Form
