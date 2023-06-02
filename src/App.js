@@ -1,17 +1,17 @@
 import './index.css';
 import './App.css';
-import OutraLista from './components/OutraLista';
+import {useState} from 'react';
+import SeuNome from './components/SeuNome';
+import Saudacao from './components/Saudacao';
 
-function App() {
-
-  const meusItens = ['React', 'bootStrap', 'FireBase']
+function App(){
+  const [nome, setNome] = useState()
 
   return (
     <div className="App">
-        <h1>Rederização De Lista</h1>
-        <OutraLista itens={meusItens}/>
-        <OutraLista itens={[]} />
-
+        <h1>State Lift</h1>
+        <SeuNome setNome={setNome}/>
+        <Saudacao nome={nome} />
     </div>
   );
 }
